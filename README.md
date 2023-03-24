@@ -57,9 +57,14 @@ Volume - É quando inserimos um volume criado anteriormente listado no Docker de
 *docker container run -ti --mount type=volume,src=dbpostgrees,dst=/backup --mount type=bind,src=/opt/backup,dst=backup ubuntu tar -cvf /backup/bkp-postgres.tar /backup*
 
 ## Gerenciamento de imagens - Dockerfile
+</figure>
+<image src="https://user-images.githubusercontent.com/12403699/227609571-c979e282-dd4e-41ca-bf45-ff4512019149.png" width="700" height="350">
+<figcaption align = "center"><b>Fig.1 - Exemplo de build e execução de uma imagem baseada em Debian que realiza um processo do Apache server.</b></figcaption>
+</figure>
 
-Build de uma imagem a partir de um dockerfile no diretório com tag de versão.
- *Docker image build -t .*
+&nbsp;
+
+*docker image build -t .* **Build de uma imagem a partir de um dockerfile no diretório com tag de versão.**
 
 *docker container run -ti -P* analisa se há um expose de portas no dockerfile, porém ele faz o bind com uma porta aleatória, sendo que o recomendado é fazer o bind manualmente com o parametro*-p*.
 
@@ -68,3 +73,9 @@ Não é possível acrescentar um volume do tipo Bind em um Dockerfile. Ele cria 
 *ENTRYPOINT* é o principal processo do container, tudo que que é declarado nele.
 
 Por padrão o docker utiliza cache ao fazer o build de uma imagem que já foi criada anteriormente, caso não queira utilizar basta usar o parâmetro *--no-cache*
+
+*COPY* **Copiar arquivos de diretório e adiciona no container.**
+
+*ADD* **Copia arquivos de diretório além de arquivos *.Tar* e seu conteúdo, sendo mais completo que o *Copy*.**
+
+*Multistage* **se assemelha a uma pipeline dentro do dockerfile, onde uma camada copia conteúdo de outra acima utilizado o parâmetro *COPY --from=parametrodoprimeiroFROM.***
