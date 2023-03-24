@@ -1,6 +1,8 @@
-# DockerLab
+# DockerLab <image src="https://user-images.githubusercontent.com/12403699/227597435-511fd8ae-c873-4fa4-b06f-a6fbe9bc1667.png" width="100" height="80">
 
-## Container
+
+## Container 
+
 É uma forma de realizar isolamento de recursos computacionais.
 - lógico: Processos, network 
 - Físico: Computação, memória
@@ -34,17 +36,6 @@ Comandos mais utilizados no dia a dia:
 - *docker container restart* **Reinicia determinado container.**
 - *docker container inspect* **Lista detalhes do container.**
 
-## Gerenciamento de imagens
-
-*docker image build -t .*
-**Build de uma imagem a partir de um dockerfile no diretório com tag de versão.**
-
-*docker image ls*
-**Lista as atuais imagens utilizadas no Docker.**
-
-*docker image prune*
-**Deleta imagens inutilizadas.**
-
 ## Volumes
 
 É uma forma de inserir um File system em um container para persistência de dados de uma determinada aplicação.
@@ -64,3 +55,16 @@ Volume - É quando inserimos um volume criado anteriormente listado no Docker de
 ## Backup de dados
 - Criação de um container para realizar de backup de determinada aplicação, no caso de um banco Postgres
 *docker container run -ti --mount type=volume,src=dbpostgrees,dst=/backup --mount type=bind,src=/opt/backup,dst=backup ubuntu tar -cvf /backup/bkp-postgres.tar /backup*
+
+## Gerenciamento de imagens - Dockerfile
+
+Build de uma imagem a partir de um dockerfile no diretório com tag de versão.
+ *Docker image build -t .*
+
+*docker container run -ti -P* analisa se há um expose de portas no dockerfile, porém ele faz o bind com uma porta aleatória, sendo que o recomendado é fazer o bind manualmente com o parametro*-p*.
+
+Não é possível acrescentar um volume do tipo Bind em um Dockerfile. Ele cria um volume automaticamente para o container com o parâmetro *VOLUME /diretorio*.
+
+*ENTRYPOINT* é o principal processo do container, tudo que que é declarado nele.
+
+Por padrão o docker utiliza cache ao fazer o build de uma imagem que já foi criada anteriormente, caso não queira utilizar basta usar o parâmetro *--no-cache*
