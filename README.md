@@ -89,3 +89,7 @@ Por padrão o docker utiliza cache ao fazer o build de uma imagem que já foi cr
 *.dockerignore* **Parâmetro que não permite que arquivos desejados sejam incluídos ao fazer uma cópia.**
 
 *HEALTHCHECK* **Parâmetro dentro da imagem que faz checagem da saúde de tempos em tempos**
+
+*docker commit -m "descrição" imageID* **Adiciona um commit a uma imagem.**
+
+*docker image tag imageID nomeimagem* **Adiciona uma Tag e nome a imagem no repositório.**
