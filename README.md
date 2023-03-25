@@ -3,7 +3,7 @@
 
 ## Container 
 
-É uma forma de realizar isolamento de recursos computacionais.
+É uma forma de realizar isolamento de recursos computacionais, *imutável*(não se pode alterar) e *efêmero*(só existe naquele momento da execução).
 - lógico: Processos, network 
 - Físico: Computação, memória
 
@@ -70,12 +70,22 @@ Volume - É quando inserimos um volume criado anteriormente listado no Docker de
 
 Não é possível acrescentar um volume do tipo Bind em um Dockerfile. Ele cria um volume automaticamente para o container com o parâmetro *VOLUME /diretorio*.
 
-*ENTRYPOINT* é o principal processo do container, tudo que que é declarado nele.
+*EXEC FORM* ***ENTRYPOINT["python", "start.py"]***
+
+*SHELL FORM* ***ENTRYPOINT python star.py***
+
+*ENTRYPOINT* é o principal processo do container, tudo o que é declarado nele.
+
+*LABEL* **Adição de informações como descrição, versão e etc para ser visualizadas na inspeção do container.**
 
 Por padrão o docker utiliza cache ao fazer o build de uma imagem que já foi criada anteriormente, caso não queira utilizar basta usar o parâmetro *--no-cache*
 
-*COPY* **Copiar arquivos de diretório e adiciona no container.**
+*COPY* **Copiar arquivos de diretório ou diretórios e adiciona no container.**
 
-*ADD* **Copia arquivos de diretório além de arquivos *.Tar* e seu conteúdo, sendo mais completo que o *Copy*.**
+*ADD* **Copia arquivos de diretório ou remotos e arquivos *.Tar* (conteúdo), sendo mais completo que o *Copy*.**
 
 *Multistage* **se assemelha a uma pipeline dentro do dockerfile, onde uma camada copia conteúdo de outra acima utilizado o parâmetro *COPY --from=parametrodoprimeiroFROM.***
+
+*.dockerignore* **Parâmetro que não permite que arquivos desejados sejam incluídos ao fazer uma cópia.**
+
+*HEALTHCHECK* **Parâmetro dentro da imagem que faz checagem da saúde de tempos em tempos**
