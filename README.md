@@ -92,4 +92,14 @@ Por padrão o docker utiliza cache ao fazer o build de uma imagem que já foi cr
 
 *docker commit -m "descrição" imageID* **Adiciona um commit a uma imagem.**
 
+## Docker Hub e Registry
+
+Para fazer upload de uma imagem para um hub ou registry recomenda-se aplicar o devido Tag e utilizar os seguintes comandos como práticas.
+
 *docker image tag imageID nomeimagem* **Adiciona uma Tag e nome a imagem no repositório.**
+
+*docker push nomeimagem* **Faz upload da imagem local para o DockerHub ou repositório online.**
+
+*docker container run -d -p 5000:5000 --restart=always --name registry registry:2* **Cria um registry local na versão recomendada para subir imagens.**
+
+*docker imagem push enderecoregistry/nomeimagemtag* **Faz o upload de imagem local para o registry.**
