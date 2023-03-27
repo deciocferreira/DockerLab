@@ -1,6 +1,5 @@
 # DockerLab <image src="https://user-images.githubusercontent.com/12403699/227597435-511fd8ae-c873-4fa4-b06f-a6fbe9bc1667.png" width="100" height="80">
 
-
 ## Container 
 
 É uma forma de realizar isolamento de recursos computacionais, *imutável*(não se pode alterar) e *efêmero*(só existe naquele momento da execução).
@@ -19,6 +18,10 @@ Todos os container utilizam a mesma imagem RO. Container utilizam o kernel do ho
 
 **Docker Cliente** Executa os comandos que digitamos.
 **Docker Deamon** Servidor que gerencia os containers.
+
+## Instalação da ferramenta(Linux-Ubuntu)
+
+*curl -fsSL https://get.docker.com | bash*
 
 Comandos mais utilizados no dia a dia:
 
@@ -103,3 +106,30 @@ Para fazer upload de uma imagem para um hub ou registry recomenda-se aplicar o d
 *docker container run -d -p 5000:5000 --restart=always --name registry registry:2* **Cria um registry local na versão recomendada para subir imagens.**
 
 *docker imagem push enderecoregistry/nomeimagemtag* **Faz o upload de imagem local para o registry.**
+
+## Docker Swarm
+
+É um orquestrador *builtin* do docker com dois principais papéis de atuação dentro do cluster, que são o **Manager** e o **Worker**.
+O *Worker* é o responsável pela execução dos containers, enquanto que o *Manager* fica encarregado da administração de todo o cluster, cuidando de toda a informação sensível.
+
+Pensando em alta disponibilidade e resiliência do Cluster com Swarm, é necessário que 51% dos *Manager ou Workers node* estejam ativos para garantir a saúde do mesmo.
+Sempre que um *Mandager node* cai, ocorre uma eleição para que um próximo node assuma a carga de trabalho.
+
+*docker swarm init* **Inicia o cluster swarm do Docker.** 
+- O parâmetro *--advertise-addr* **especifica o endereço IP que irá centralizar o cluster.**
+
+*docker node promote nodename* **Promove o node a managar para garantir resiliência.**
+
+*docker swarm join-token worker/manager* **Retorna comando para adicionar um worker/manager ao cluster.**
+
+*docker swarm join-token --rotate worker/manager **Retorna comando com uma nova chave token para adicionar nós no cluster.**
+
+*docker node update* **Atualiza informações como disponibilidade e Tag no correspondente nó.**
+ - Parâmetros *--availability* irá determinar o estado do nó, com as possibilidade de valor: drain, pause, active.
+
+## Service
+
+Recomenda-se como boa prática, fazer um *downscaling* no cluster e depois um *upscale* ao se adicionar novos nodes, para a devida disrtibuição.
+
+## Referências
+Site para poder praticar e fazer laboratórios: *https://labs.play-with-docker.com/*
