@@ -129,7 +129,24 @@ Sempre que um *Mandager node* cai, ocorre uma eleição para que um próximo nod
 
 ## Service
 
-Recomenda-se como boa prática, fazer um *downscaling* no cluster e depois um *upscale* ao se adicionar novos nodes, para a devida disrtibuição.
+Garante resiliência dos nós do Swarm. Configuração de diversos containers respondendo/suportando a um único serviço/aplicação.
+ - *Load Balancer* das aplicações.
+
+*docker service create --name nomeaplicacao --replicas numeroreplicas -p 8080:8080 nginx* **Criação de service nginx com bind de porta em todos os nós.**
+
+*docker service ls* **Lista os serviços criados.**
+
+*docker service ps nomeservice* **Especifica os status do service que foi passado no comando.**
+
+*docer service inspect nomeservice* **Lista os detalhes do serviço.** 
+ - Parâmetro *--pretty* lista os detalhes de forma mais resumida e amigável.
+
+*docker service scale nomeservice=numerodesejadodeescala* **Realiza um scale no cluster de acordo com o número que foi passado no comando.**
+ - Recomenda-se como boa prática, fazer um *downscaling* no cluster e depois um *upscale* ao se adicionar novos nodes, para a devida disrtibuição.
+ 
+*docker service logs -f nomeservice* **Disponibiliza logs de todos os containers para realização de análises.** 
+ 
+# Tipo de de rede *ingress* é a que possibilita a comunicação entre todos os containers da mesma rede
 
 ## Referências
 Site para poder praticar e fazer laboratórios: *https://labs.play-with-docker.com/*
