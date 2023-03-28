@@ -145,8 +145,16 @@ Garante resiliência dos nós do Swarm. Configuração de diversos containers re
  - Recomenda-se como boa prática, fazer um *downscaling* no cluster e depois um *upscale* ao se adicionar novos nodes, para a devida disrtibuição.
  
 *docker service logs -f nomeservice* **Disponibiliza logs de todos os containers para realização de análises.** 
+
+##Network
+
+docker network create -d overlay giropops
+
+*docker network ls*
+
+*docker network inspect giropops*
  
-# Tipo de de rede *ingress* é a que possibilita a comunicação entre todos os containers da mesma rede
+*Tipo de de rede *ingress* é a que possibilita a comunicação entre todos os containers da mesma rede*
 
 ## Referências
 Site para poder praticar e fazer laboratórios: *https://labs.play-with-docker.com/*
