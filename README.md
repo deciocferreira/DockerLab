@@ -157,4 +157,7 @@ Garante resiliência dos nós do Swarm. Configuração de diversos containers re
 *Tipo de de rede *ingress* é a que possibilita a comunicação entre todos os containers da mesma rede*
 
 ## Referências
+
+Livro descomplicando Docker do Linuxtips: *https://livro.descomplicandodocker.com.br/*
+
 Site para poder praticar e fazer laboratórios: *https://labs.play-with-docker.com/*
