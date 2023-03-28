@@ -156,6 +156,12 @@ Garante resiliência dos nós do Swarm. Configuração de diversos containers re
  
 *Tipo de de rede *ingress* é a que possibilita a comunicação entre todos os containers da mesma rede*
 
+## Secrets
+
+Gerenciamento de informação sensíveis como usuário e senhas. Podem ser criados diretamente por parâmetros ou por meio de arquivos.
+
+*echo -n "USER/PASSWORD@2023" | docker secret create secret1 -* **Criação de um secret por parâmetros(linux).**
+
 ## Referências
 
 Livro descomplicando Docker do Linuxtips: *https://livro.descomplicandodocker.com.br/*
