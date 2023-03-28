@@ -146,13 +146,13 @@ Garante resiliência dos nós do Swarm. Configuração de diversos containers re
  
 *docker service logs -f nomeservice* **Disponibiliza logs de todos os containers para realização de análises.** 
 
-##Network
+## Network
 
-docker network create -d overlay giropops
+*docker network create -d overlay giropops* **Cria uma rede do tipo overlay, que é utilizada em swarms para comunicação dos containers.**
 
-*docker network ls*
+*docker network ls* **Lista as redes criadas.**
 
-*docker network inspect giropops*
+*docker network inspect nomedarede* **Retorna informações sobre a rede.**
  
 *Tipo de de rede *ingress* é a que possibilita a comunicação entre todos os containers da mesma rede*
 
