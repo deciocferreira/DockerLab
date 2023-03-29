@@ -159,8 +159,17 @@ Garante resiliência dos nós do Swarm. Configuração de diversos containers re
 ## Secrets
 
 Gerenciamento de informação sensíveis como usuário e senhas. Podem ser criados diretamente por parâmetros ou por meio de arquivos.
+Utilizados somente dentro do cluster swarm.
 
 *echo -n "USER/PASSWORD@2023" | docker secret create secret1 -* **Criação de um secret por parâmetros(linux).**
+
+*docker service create --name app --detach=false --secret db_pass  minha_app:1.0* **Criação de service passando um secret.**
+
+*docker service create --detach=false --name app --secret source=db_pass,target=password,uid=2000,gid=3000,mode=0400 minha_app:1.0* **Criação de service passando secret com permissionamento.
+
+## Docker Compose
+
+Deploy de aplicações e componentes
 
 ## Referências
 
