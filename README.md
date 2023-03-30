@@ -169,7 +169,9 @@ Utilizados somente dentro do cluster swarm.
 
 ## Docker Compose
 
-Deploy de aplicações e componentes
+É uma forma de declarar a necessidade em um arquivo para ser realizar um deploy. Uma Stack é a união de services 
+
+*docker stack deploy -c arquivocompose.yml nomeda stack* **Criação de um stack passando um docker compose file.**
 
 ## Referências
 
