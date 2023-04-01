@@ -169,7 +169,9 @@ Utilizados somente dentro do cluster swarm.
 
 ## Docker Compose
 
-É uma forma de declarar a necessidade em um arquivo para ser realizar um deploy. Uma Stack é a união de services e que por sua vez é a união de containers. 
+O compose é uma forma de você conseguir escrever em um único arquivo todos os detalhes e necessidade de sua aplicação. 
+
+Uma Stack é a união de services, que por sua vez é a união de containers. 
 
 *docker stack deploy -c arquivocompose.yml nomeda stack* **Criação de um stack passando um docker compose file.**
 
@@ -180,7 +182,16 @@ Modes de deploy:
 - Replicated: você escolhe a quantidade de réplicas do seu service, 
 - Global você não escolhe a quantidade de réplicas, ele irá subir uma réplica por node de seu cluster (uma réplica em cada node de seu cluster).
 
+</figure>
+<image src="https://user-images.githubusercontent.com/12403699/229312724-588e3c6b-6b40-4105-8f0b-677f43a6cd78.png" width="700" height="350">
+<figcaption align = "center"><b>Fig.1 - Exemplo de deploy de uma stack e os serviços criados.</b></figcaption>
+</figure>
+
+&nbsp;
+
 ## Referências
+
+Documentação oficial do Docker: *https://docs.docker.com/reference/*
 
 Livro descomplicando Docker do Linuxtips: *https://livro.descomplicandodocker.com.br/*
 
