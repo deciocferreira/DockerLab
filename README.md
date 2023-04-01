@@ -175,6 +175,11 @@ Utilizados somente dentro do cluster swarm.
 
 *docker stack ps nomedastack* **Lista detalhes sobre a execução da stack.**
 
+Modes de deploy:
+
+- Replicated: você escolhe a quantidade de réplicas do seu service, 
+- Global você não escolhe a quantidade de réplicas, ele irá subir uma réplica por node de seu cluster (uma réplica em cada node de seu cluster).
+
 ## Referências
 
 Livro descomplicando Docker do Linuxtips: *https://livro.descomplicandodocker.com.br/*
