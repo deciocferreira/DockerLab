@@ -1,5 +1,12 @@
 # DockerLab <image src="https://user-images.githubusercontent.com/12403699/227597435-511fd8ae-c873-4fa4-b06f-a6fbe9bc1667.png" width="100" height="80">
 
+
+## Por que estudar Docker?
+
+Porque permite que profissionais empacotem um aplicativo e todas as suas dependências em um container, tornando o desenvolvimento mais fácil, independente da plataforma ou sistema operacional em que ele será implantado.
+
+Utilizar Docker acelera as implantações, aumentando a portabilidade e escalabilidade, além de reduzir custos de infraestrutura.
+
 ## Container 
 
 É uma forma de realizar isolamento de recursos computacionais, *imutável*(não se pode alterar) e *efêmero*(só existe naquele momento da execução).
