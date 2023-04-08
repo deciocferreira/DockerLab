@@ -70,6 +70,8 @@ No caso de utilização de outros cloud providers, consultar a devida documenta�
   
 ## Referências
   
+*Consultar arquivos docker compose e yaml do prometheus na pasta Prometheus deste repo.*  
+  
 *https://cloud.google.com/shell/docs*
 
 *https://cloud.google.com/run/docs*
